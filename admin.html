@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Musica — Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-page">
+
+<header class="topbar">
+
+  <a href="index.html" class="brand">
+    <span class="music-mark">♫</span>
+    musica<span>.</span>
+  </a>
+
+  <a href="index.html" class="view-site">
+    View site ↗
+  </a>
+
+</header>
+
+
+<main class="admin-main">
+
+  <!-- ================= LOGIN ================= -->
+
+  <section id="loginView" class="login-screen">
+
+    <div class="login-card">
+
+      <div class="login-symbol">
+        ♫
+      </div>
+
+      <p class="eyebrow">
+        PRIVATE AREA
+      </p>
+
+      <h1>
+        Welcome back.
+      </h1>
+
+      <p class="login-description">
+        Đăng nhập để quản lý music archive của bạn.
+      </p>
+
+      <form id="loginForm">
+
+        <label>
+          <span>Email</span>
+
+          <input
+            id="loginEmail"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </label>
+
+        <label>
+          <span>Password</span>
+
+          <input
+            id="loginPassword"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+            required
+          >
+        </label>
+
+        <button
+          id="loginBtn"
+          type="submit"
+          class="primary-btn"
+        >
+          <span id="loginBtnText">
+            Sign in
+          </span>
+        </button>
+
+      </form>
+
+      <p
+        id="loginMessage"
+        class="message"
+      ></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= DASHBOARD ================= -->
+
+  <section id="dashboard" hidden>
+
+    <div class="dashboard-head">
+
+      <div>
+
+        <p class="eyebrow">
+          LIBRARY EDITOR
+        </p>
+
+        <h1>
+          Dashboard
+        </h1>
+
+        <p id="userEmail" class="user-email"></p>
+
+      </div>
+
+      <div class="dashboard-actions">
+
+        <a
+          href="index.html"
+          class="outline-btn"
+        >
+          View site ↗
+        </a>
+
+        <button
+          id="logoutBtn"
+          class="outline-btn"
+          type="button"
+        >
+          Sign out
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= STORY ================= -->
+
+    <div class="admin-grid">
+
+      <section class="panel">
+
+        <div class="panel-heading">
+
+          <div class="panel-icon">
+            ✦
+          </div>
+
+          <div>
+            <p class="eyebrow">
+              STORY
+            </p>
+
+            <h2>
+              Story settings
+            </h2>
+          </div>
+
+        </div>
+
+
+        <label>
+          <span>Title</span>
+
+          <input
+            id="storyTitleInput"
+            type="text"
+            placeholder="Tên truyện"
+          >
+        </label>
+
+
+        <label>
+          <span>Note</span>
+
+          <textarea
+            id="storyNoteInput"
+            rows="5"
+            placeholder="Viết note về playlist / bộ truyện..."
+          ></textarea>
+        </label>
+
+
+        <label>
+          <span>Cover image</span>
+
+          <input
+            id="coverFile"
+            type="file"
+            accept="image/*"
+          >
+        </label>
+
+
+        <button
+          id="saveStoryBtn"
+          class="primary-btn"
+          type="button"
+        >
+          Save story
+        </button>
+
+        <p
+          id="storyMessage"
+          class="message"
+        ></p>
+
+      </section>
+
+
+      <!-- ================= CHAPTER ================= -->
+
+      <section class="panel">
+
+        <div class="panel-heading">
+
+          <div class="panel-icon">
+            +
+          </div>
+
+          <div>
+            <p class="eyebrow">
+              NEW CHAPTER
+            </p>
+
+            <h2>
+              Add chapter
+            </h2>
+          </div>
+
+        </div>
+
+
+        <label>
+          <span>Chapter number</span>
+
+          <input
+            id="chapterNumber"
+            type="number"
+            min="1"
+            placeholder="1"
+          >
+        </label>
+
+
+        <label>
+          <span>Chapter title</span>
+
+          <input
+            id="chapterTitle"
+            type="text"
+            placeholder="Chapter 01 — The Beginning"
+          >
+        </label>
+
+
+        <label>
+          <span>Tone / style</span>
+
+          <input
+            id="chapterStyle"
+            type="text"
+            placeholder="melancholic · cinematic"
+          >
+        </label>
+
+
+        <button
+          id="addChapterBtn"
+          class="primary-btn"
+          type="button"
+        >
+          + Create chapter
+        </button>
+
+
+        <p
+          id="chapterMessage"
+          class="message"
+        ></p>
+
+      </section>
+
+    </div>
+
+
+    <!-- ================= CHAPTER MANAGER ================= -->
+
+    <section class="panel chapter-manager">
+
+      <div class="manager-header">
+
+        <div>
+
+          <p class="eyebrow">
+            PUBLISHED COLLECTION
+          </p>
+
+          <h2>
+            Chapters & tracks
+          </h2>
+
+        </div>
+
+        <span class="manager-count">
+          MUSIC ARCHIVE
+        </span>
+
+      </div>
+
+
+      <div id="adminChapters"></div>
+
+    </section>
+
+  </section>
+
+</main>
+
+
+<!-- ================= TRACK MODAL ================= -->
+
+<div
+  id="trackModal"
+  class="modal"
+  hidden
+>
+
+  <div class="modal-bg"></div>
+
+  <div class="modal-card">
+
+    <div class="modal-head">
+
+      <div>
+
+        <p class="eyebrow">
+          TRACK
+        </p>
+
+        <h2 id="trackModalTitle">
+          Add music
+        </h2>
+
+      </div>
+
+      <button
+        id="closeTrack"
+        class="close-btn"
+        type="button"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <input id="trackId" type="hidden">
+
+    <input id="trackChapterId" type="hidden">
+
+
+    <label>
+      <span>Song title</span>
+
+      <input
+        id="trackTitle"
+        type="text"
+        placeholder="Tên bài hát"
+      >
+    </label>
+
+
+    <label>
+      <span>Artist / note</span>
+
+      <input
+        id="trackArtist"
+        type="text"
+        placeholder="Artist hoặc ghi chú"
+      >
+    </label>
+
+
+    <label>
+      <span>External link</span>
+
+      <input
+        id="trackUrl"
+        type="url"
+        placeholder="YouTube / Spotify / SoundCloud..."
+      >
+    </label>
+
+
+    <div class="or">
+      <span>OR</span>
+    </div>
+
+
+    <label>
+      <span>Upload audio</span>
+
+      <input
+        id="trackFile"
+        type="file"
+        accept="audio/*"
+      >
+    </label>
+
+
+    <p class="hint">
+      Chọn <strong>link</strong> hoặc <strong>file audio</strong>.
+    </p>
+
+
+    <button
+      id="saveTrackBtn"
+      class="primary-btn"
+      type="button"
+    >
+      Save track
+    </button>
+
+
+    <p
+      id="trackMessage"
+      class="message"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
