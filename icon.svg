@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="38%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1c1815"/>
+      <stop offset="55%" stop-color="#120f0d"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </radialGradient>
+    <radialGradient id="vinyl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c66d42"/>
+      <stop offset="30%" stop-color="#1f1a17"/>
+      <stop offset="34%" stop-color="#16120f"/>
+      <stop offset="68%" stop-color="#0f0c0a"/>
+      <stop offset="100%" stop-color="#050404"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".10"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c66d42" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#c66d42" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Nền tối ấm -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Quầng sáng cam phía sau đĩa -->
+  <circle cx="256" cy="278" r="170" fill="url(#glow)"/>
+
+  <!-- Đĩa than -->
+  <g transform="rotate(-20 256 278)">
+    <circle cx="256" cy="278" r="150" fill="url(#vinyl)"/>
+    <!-- rãnh đĩa -->
+    <circle cx="256" cy="278" r="136" fill="none" stroke="#1c1714" stroke-width="1"/>
+    <circle cx="256" cy="278" r="120" fill="none" stroke="#1c1714" stroke-width="1"/>
+    <circle cx="256" cy="278" r="104" fill="none" stroke="#1c1714" stroke-width="1"/>
+    <circle cx="256" cy="278" r="88" fill="none" stroke="#1c1714" stroke-width="1"/>
+    <!-- nhãn -->
+    <circle cx="256" cy="278" r="56" fill="#c66d42"/>
+    <circle cx="256" cy="278" r="56" fill="url(#sheen)"/>
+    <circle cx="256" cy="278" r="14" fill="#0d0c0b"/>
+    <!-- nốt nhạc trên nhãn -->
+    <text x="256" y="292" text-anchor="middle" fill="#1a1410" font-family="Georgia, serif" font-size="44">♫</text>
+  </g>
+
+  <!-- Sóng âm thanh lan tỏa bên phải -->
+  <g stroke="#c66d42" stroke-linecap="round" fill="none" opacity=".85">
+    <path d="M440 208 q 22 0 22 40 t -22 40" stroke-width="6"/>
+    <path d="M458 190 q 30 0 30 58 t -30 58" stroke-width="6" opacity=".55"/>
+    <path d="M476 172 q 38 0 38 76 t -38 76" stroke-width="6" opacity=".28"/>
+  </g>
+</svg>
